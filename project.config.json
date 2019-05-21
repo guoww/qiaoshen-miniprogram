@@ -1,0 +1,110 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.2",
+	"appid": "wx1388e463e491ee20",
+	"projectname": "ColorUI-template",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": 0,
+					"name": "仓库详情",
+					"pathName": "pages/storeHouseDetail/storeHouseDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索页",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "仓库编辑",
+					"pathName": "pages/storeEdit/storeEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "需求登记",
+					"pathName": "pages/need/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "需求查找",
+					"pathName": "pages/need/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "路线编辑",
+					"pathName": "pages/route/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "线路查找",
+					"pathName": "pages/route/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "货源编辑",
+					"pathName": "pages/goods/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "货源查找",
+					"pathName": "pages/goods/search/search",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,117 @@
+<view class="box bg-cyan" style='padding-top:20px;'>
+  <view class="cu-bar bg-cyan">
+    <navigator open-type='navigateBack'>
+      <view class="action" bindtap="back">
+        <text class="cuIcon-back text-white"></text> 返回
+      </view>
+    </navigator>
+    <view class="content text-bold">
+      需求登记
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 需求信息
+  </view>
+</view>
+<view class="cu-form-group">
+		<view class="title"><text style='color:red'>*</text>需求类别</view>
+		<picker bindchange="needTypeChange" value="{{index}}" range="{{needType}}">
+			<view class="picker">
+				{{needTypeVal?needTypeVal:'请选择需求类别'}}
+			</view>
+		</picker>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>需求面积</view>
+  <input placeholder="最小面积"></input>
+  <text style="margin:0 60rpx;">—</text>
+  <input placeholder="最大面积"></input>
+  <text>m²</text>
+</view>
+<view class="cu-form-group">
+		<view class="title"><text style='color:red'>*</text>仓库类型</view>
+		<picker bindchange="storeTypeChange" value="{{index}}" range="{{storeType}}">
+			<view class="picker">
+				{{storeTypeVal?storeTypeVal:'请选择仓库类型'}}
+			</view>
+		</picker>
+</view>
+<view class="cu-form-group">
+		<view class="title"><text style='color:red'>*</text>货品类型</view>
+		<picker bindchange="goodsTypeChange" value="{{index}}" range="{{goodsType}}">
+			<view class="picker">
+				{{goodsTypeVal?goodsTypeVal:'请选择货品类型'}}
+			</view>
+		</picker>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>启动时间</view>
+  <picker bindchange="startTimeChange" value="{{index}}" range="{{startTimeArray}}">
+			<view class="picker">
+				{{startTimeVal?startTimeVal:'请选择仓库类型'}}
+			</view>
+		</picker>
+    <picker mode="date" fields="month" bindchange="startMonthChange">
+			<view class="picker">
+				{{startMonthVal?startMonthVal:'请选择年月'}}
+			</view>
+		</picker>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>使用周期</view>
+  <picker bindchange="useRegionChange" value="{{index}}" range="{{useRegionArray}}">
+			<view class="picker">
+				{{userRegionVal?userRegionVal:'请选择使用周期'}}
+			</view>
+		</picker>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 货品详情
+  </view>
+</view>
+<view class="cu-form-group">
+	<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入仓库简介"></textarea>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 补充说明（选填）
+  </view>
+</view>
+<view class="cu-form-group">
+	<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入更多补充说明，如：仓库类型要求、找仓备选区域、价格最高预算、特殊资质等等"></textarea>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 联系信息
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>联系人</view>
+  <input placeholder="请输入联系人"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">联系邮箱</view>
+  <input placeholder="请输入联系邮箱"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">公司名称</view>
+  <input placeholder="请输入公司名称"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>联系电话</view>
+  <input placeholder="请输入联系电话"></input>
+</view>
+
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>验证码</view>
+  <input placeholder="请输入验证码"></input>
+  <button class="cu-btn bg-green shadow">获取验证码</button>
+</view>
+
+<button class="cu-btn bg-orange margin-tb-sm lg button-hover" style="width:90%;margin-left:5%;">立即登记</button>

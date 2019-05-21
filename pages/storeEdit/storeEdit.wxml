@@ -1,0 +1,132 @@
+<view class="box bg-cyan" style='padding-top:20px;'>
+  <view class="cu-bar bg-cyan">
+    <navigator open-type='navigateBack'>
+      <view class="action" bindtap="back">
+        <text class="cuIcon-back text-white"></text> 返回
+      </view>
+    </navigator>
+    <view class="content text-bold">
+      仓库登记
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 仓库类型
+  </view>
+</view>
+<view class="cu-form-group">
+		<view class="title"><text style='color:red'>*</text>供应类型</view>
+		<picker bindchange="supplyTypeChange" value="{{index}}" range="{{supplyType}}">
+			<view class="picker">
+				{{supplyTypeVal?supplyTypeVla:'请选择供应类型'}}
+			</view>
+		</picker>
+</view>
+
+<view class="cu-form-group">
+		<view class="title"><text style='color:red'>*</text>仓库类型</view>
+		<picker bindchange="storeTypeChange" value="{{index}}" range="{{storeType}}">
+			<view class="picker">
+				{{storeTypeVal?storeTypeVal:'请选择仓库类型'}}
+			</view>
+		</picker>
+</view>
+<view class="cu-form-group">
+		<view class="title"><text style='color:red'>*</text>建筑类型</view>
+		<picker bindchange="buildTypeChange" value="{{index}}" range="{{buildType}}">
+			<view class="picker">
+				{{buildTypeVal?buildTypeVal:'请选择建筑类型'}}
+			</view>
+		</picker>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 仓库信息
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>详细地址</view>
+  <input placeholder="请输入详细地址"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>仓库面积</view>
+  <input placeholder="请输入仓库总面积"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>可租面积</view>
+  <input placeholder="请输入可租面积"></input>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 出租报价
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>租金</view>
+  <input placeholder="" class="solid-bottom"></input>
+  <text>元/平米/月</text>
+  <picker mode="multiSelector" range="{{unitArray}}" value="{{multiIndex}}" class="bg-cyan" style='color:white;margin-left:40rpx;padding:10rpx 30rpx 10rpx 30rpx;border-radius:10rpx'>更多租金单位</picker>
+</view> 
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    图片上传
+  </view>
+  <view class="action">
+    {{imgList.length}}/4
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="grid col-4 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+      <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 仓库简介
+  </view>
+</view>
+<view class="cu-form-group">
+	<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入仓库简介"></textarea>
+</view>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text> 联系信息
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>联系人</view>
+  <input placeholder="请输入联系人"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">联系邮箱</view>
+  <input placeholder="请输入联系邮箱"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">公司名称</view>
+  <input placeholder="请输入公司名称"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>联系电话</view>
+  <input placeholder="请输入联系电话"></input>
+</view>
+
+<view class="cu-form-group">
+  <view class="title"><text style='color:red'>*</text>验证码</view>
+  <input placeholder="请输入验证码"></input>
+  <button class="cu-btn bg-green shadow">获取验证码</button>
+</view>
+
+<button class="cu-btn bg-orange margin-tb-sm lg button-hover" style="width:90%;margin-left:5%;">立即登记</button>

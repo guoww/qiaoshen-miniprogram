@@ -1,0 +1,206 @@
+<view class="{{modalName=='viewModal'?'search-show':''}}">
+  <view style='position:fixed; top:0;z-index:2'>
+      <view class="box bg-cyan" style='padding-top:20px;'>
+  <view class="cu-bar bg-cyan">
+    <navigator open-type='navigateBack'>
+      <view class="action" bindtap="back">
+        <text class="cuIcon-back text-white"></text> 返回
+      </view>
+    </navigator>
+    
+    <view class="content text-bold">
+      查找仓库
+    </view>
+  </view>
+</view>
+      <view class="cu-bar search bg-cyan" style="width:100%">
+        <view class="search-form round">
+          <text class="cuIcon-search"></text>
+          <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+        </view>
+        <view class="action">
+          <text>广州</text>
+          <text class="cuIcon-triangledownfill"></text>
+        </view>
+    </view>
+    <scroll-view scroll-x class="search-wrapper bg-white nav">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{0==TabCur?'text-orange cur':'text-gray'}}" wx:key bindtap="tabSelect" data-id="0">
+          <picker mode="region" bindchange='regionChange' custom-item="全部">
+            <text class="cuIcon-usefullfill {{0==TabCur?'trans':''}}"></text>{{regionVal}}
+          </picker>
+        </view>
+        <view class="cu-item flex-sub {{1==TabCur?'text-orange cur':'text-gray'}}" wx:key bindtap="tabSelect" data-id="1">
+          <picker range='{{storeTypeArray}}' bindchange="storeTypeChange">
+            <text class="cuIcon-usefullfill {{1==TabCur?'trans':''}}"></text>{{storeTypeValue}}
+          </picker>
+          
+        </view>
+        <view class="cu-item flex-sub {{2==TabCur?'text-orange cur':'text-gray'}}" wx:key bindtap="tabSelect" data-id="2">
+          <picker range='{{areaArray}}' bindchange="areaChange">
+            <text class="cuIcon-usefullfill {{2==TabCur?'trans':''}}"></text>{{areaVal}}
+          </picker>
+        </view>
+        <view class="cu-item flex-sub {{3==TabCur?'text-orange cur':'text-gray'}}" wx:key bindtap="tabSelect" data-id="3" data-target="viewModal">
+          <text class="cuIcon-usefullfill {{3==TabCur?'trans':''}}"></text>更多
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+<scroll-view scroll-y style='padding-top:180px;z-index:1;background:#fff;'>
+  <view class="cu-card article">
+      <view class="cu-item shadow solid-bottom" style='margin:0;padding-top:20rpx;' wx:for="{{10}}">
+          <view class="content">
+            <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+            <view class="desc">
+              <view style='font-weight:bolder;font-size:32rpx;'>广东珠海金湾区恒温仓库</view>
+              <view class="text-content" style="text-overflow:ellipsis;-webkit-box-orient:vertical;overflow:hidden;white-space:nowrap;width:430rpx;height:1.6em;"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+              <view>
+                <view style="color:#888;font-size:28rpx;height:1.2em;">期限面议，面积面议</view>
+                <view class="cu-tag bg-green light sm round">仓储</view>
+                <view style="margin-top:10rpx;">
+                  <text class='text-red'>面积：20000㎡</text>
+                  <text class="text-gray" style="float:right;">日期：09-30</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+</scroll-view>
+</view>
+
+
+<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+			<text class="cuIcon-pullright"></text>
+		</view>
+		<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg" style="background-color:#fff;min-height:1200rpx;">
+				<view class="op-item solid-bottom">
+          <view class="op-title">
+            供应类型
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>不限</button>
+            <button class='cu-btn bg-gray button-hover'>出租</button>
+            <button class='cu-btn bg-gray button-hover'>托管</button>
+            <button class='cu-btn bg-gray button-hover'>出租/托管</button>
+          </view>
+        </view>
+        <view class="op-item solid-bottom">
+          <view class="op-title">
+            建筑类型
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>不限</button>
+            <button class='cu-btn bg-gray button-hover'>平台</button>
+            <button class='cu-btn bg-gray button-hover'>高台</button>
+            <button class='cu-btn bg-gray button-hover'>平房</button>
+            <button class='cu-btn bg-gray button-hover'>楼房</button>
+            <button class='cu-btn bg-gray button-hover'>地下</button>
+            <button class='cu-btn bg-gray button-hover'>立体</button>
+          </view>
+        </view>
+        <view class="op-item solid-bottom">
+          <view class="op-title">
+            地坪处理
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>不限</button>
+            <button class='cu-btn bg-gray button-hover'>高标水泥</button>
+            <button class='cu-btn bg-gray button-hover'>地砖</button>
+            <button class='cu-btn bg-gray button-hover'>金刚砂</button>
+            <button class='cu-btn bg-gray button-hover'>耐磨</button>
+            <button class='cu-btn bg-gray button-hover'>环氧</button>
+            <button class='cu-btn bg-gray button-hover'>防尘</button>
+            <button class='cu-btn bg-gray button-hover'>防潮</button>
+            <button class='cu-btn bg-gray button-hover'>防静电</button>
+          </view>
+        </view>
+        <view class="op-item solid-bottom">
+          <view class="op-title">
+            服务范围
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>不限</button>
+            <button class='cu-btn bg-gray button-hover'>仓储</button>
+            <button class='cu-btn bg-gray button-hover'>运输</button>
+            <button class='cu-btn bg-gray button-hover'>代发</button>
+            <button class='cu-btn bg-gray button-hover'>装卸</button>
+            <button class='cu-btn bg-gray button-hover'>检验</button>
+            <button class='cu-btn bg-gray button-hover'>拣货</button>
+            <button class='cu-btn bg-gray button-hover'>标签</button>
+            <button class='cu-btn bg-gray button-hover'>包装</button>
+            <button class='cu-btn bg-gray button-hover'>加工</button>
+            <button class='cu-btn bg-gray button-hover'>收款</button>
+            <button class='cu-btn bg-gray button-hover'>回收/退货</button>
+            <button class='cu-btn bg-gray button-hover'>报关商检</button>
+            <button class='cu-btn bg-gray button-hover'>配送</button>
+          </view>
+        </view>
+        <view class="op-item solid-bottom">
+          <view class="op-title">
+            专业类型
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>不限</button>
+            <button class='cu-btn bg-gray button-hover'>电务仓</button>
+            <button class='cu-btn bg-gray button-hover'>三/四方伏流</button>
+            <button class='cu-btn bg-gray button-hover'>温控仓</button>
+            <button class='cu-btn bg-gray button-hover'>医疗仓</button>
+            <button class='cu-btn bg-gray button-hover'>冷冻链</button>
+            <button class='cu-btn bg-gray button-hover'>危险品</button>
+            <button class='cu-btn bg-gray button-hover'>保税仓</button>
+            <button class='cu-btn bg-gray button-hover'>发展商</button>
+            <button class='cu-btn bg-gray button-hover'>物流配送中心</button>
+            <button class='cu-btn bg-gray button-hover'>区域配送中心</button>
+            <button class='cu-btn bg-gray button-hover'>国家级分拨中心</button>
+          </view>
+        </view>
+        <view class="op-item solid-bottom">
+          <view class="op-title">
+            擅长货类
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>其他</button>
+            <button class='cu-btn bg-gray button-hover'>快消产品</button>
+            <button class='cu-btn bg-gray button-hover'>通讯/电子</button>
+            <button class='cu-btn bg-gray button-hover'>家用电器</button>
+            <button class='cu-btn bg-gray button-hover'>办公/文娱</button>
+            <button class='cu-btn bg-gray button-hover'>医疗器械</button>
+            <button class='cu-btn bg-gray button-hover'>药品/疫苗</button>
+            <button class='cu-btn bg-gray button-hover'>家具</button>
+            <button class='cu-btn bg-gray button-hover'>危险品</button>
+            <button class='cu-btn bg-gray button-hover'>五金/配件</button>
+            <button class='cu-btn bg-gray button-hover'>服饰/鞋帽</button>
+            <button class='cu-btn bg-gray button-hover'>体育/户外</button>
+            <button class='cu-btn bg-gray button-hover'>家具日用</button>
+            <button class='cu-btn bg-gray button-hover'>农副/粮油</button>
+            <button class='cu-btn bg-gray button-hover'>护肤/化妆</button>
+            <button class='cu-btn bg-gray button-hover'>食品/保健</button>
+            <button class='cu-btn bg-gray button-hover'>酒水/饮料</button>
+            <button class='cu-btn bg-gray button-hover'>其他原材料</button>
+            <button class='cu-btn bg-gray button-hover'>汽配/轮胎</button>
+            <button class='cu-btn bg-gray button-hover'>生鲜/蔬果</button>
+            <button class='cu-btn bg-gray button-hover'>家装建材</button>
+            <button class='cu-btn bg-gray button-hover'>钢材</button>
+            <button class='cu-btn bg-gray button-hover'>化工原料及制品</button>
+          </view>
+        </view>
+        <view class="op-item solid-bottom">
+          <view class="op-title">
+            其他资料
+          </view>
+          <view class="options">
+            <button class='cu-btn bg-gray button-hover'>有国际客户经验</button>
+            <button class='cu-btn bg-gray button-hover'>可作厂房</button>
+            <button class='cu-btn bg-gray button-hover'>可分割</button>
+            <button class='cu-btn bg-gray button-hover'>可改造</button>
+            <button class='cu-btn bg-gray button-hover'>独立院门</button>
+            <button class='cu-btn bg-gray button-hover'>外置雨棚</button>
+            <button class='cu-btn bg-gray button-hover'>可生产</button>
+          </view>
+        </view>
+			</view>
+		</scroll-view>

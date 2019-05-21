@@ -1,0 +1,53 @@
+<view class="">
+  <view style='position:fixed; top:0;z-index:2;width:100%'>
+      <view class="box bg-cyan" style='padding-top:20px;'>
+  <view class="cu-bar bg-cyan">
+    <navigator open-type='navigateBack'>
+      <view class="action" bindtap="back">
+        <text class="cuIcon-back text-white"></text> 返回
+      </view>
+    </navigator>
+    
+    <view class="content text-bold">
+      查找线路
+    </view>
+  </view>
+</view>
+      <view class="cu-bar search bg-cyan" style="width:100%">
+        <view class="search-form round">
+          <text class="cuIcon-search"></text>
+          <input type="text" placeholder="请输入始发仓或终点仓" confirm-type="search"></input>
+        </view>
+        <view class="action">
+          <text>广州</text>
+          <text class="cuIcon-triangledownfill"></text>
+        </view>
+    </view>
+  </view>
+
+<scroll-view scroll-y style='padding-top:133px;z-index:1'>
+  <view class="cu-card article">
+      <view class="cu-item shadow" style='margin:0;padding:0;' wx:for="{{12}}">
+          <view class="content solid-bottom">
+            <view class="rd-item">
+              <view class="start">
+                <view class="tle">
+                  始发仓
+                </view>
+                <view style="font-size:28rpx;font-family:微软雅黑;">广州</view>
+              </view>
+              <view class="middle">
+                <view class="text-gray iconfont icon-zuixinhuoyuan" style="font-size: 25px;background-color: #fff;height: 25px;width: 50px;"></view>
+              </view>
+              <view class="end" style="width:30%;display:flex;flex-direction:column;">
+                <view class="tle">
+                  终点仓
+                </view>
+                <view style="font-size:28rpx;font-family:微软雅黑;">中山</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+</scroll-view>
+</view>

@@ -1,0 +1,30 @@
+<view class="box bg-cyan" style='padding-top:20px;'>
+  <view class="cu-bar bg-cyan">
+    <navigator open-type='navigateBack'>
+      <view class="action" bindtap="back">
+        <text class="cuIcon-back text-white"></text> 返回
+      </view>
+    </navigator>
+    <view class="content text-bold">
+      线路登记
+    </view>
+  </view>
+</view>
+<scroll-view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-titles text-orange"></text> 路线信息
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="title"><text style='color:red'>*</text>始发仓</view>
+    <input placeholder="请输入始发仓"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title"><text style='color:red'>*</text>终点仓</view>
+    <input placeholder="请输入终点仓"></input>
+  </view>
+  <navigator open-type='navigateBack'>
+  <button class="cu-btn bg-orange margin-tb-sm lg button-hover" style="width:90%;margin-left:5%;">立即登记</button>
+  </navigator>
+</scroll-view>

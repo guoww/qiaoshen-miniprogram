@@ -1,0 +1,177 @@
+<scroll-view style="padding-bottom:55px">
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>首页</view>
+  </view>
+</view>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{4}}" wx:key>
+    <image src="/images/index/qs_index_swp{{index+1}}.jpg" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+
+<view class="cu-bar search bg-white" style="margin-top:20rpx;">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索仓库、线路、货源" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round">搜索</button>
+    </view>
+  </view>
+  
+  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}" style='margin-top:20rpx;'>
+  
+    <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}">
+      <navigator url="{{item.url}}">
+        <view class="iconfont {{item.icon}} text-{{item.color}}"></view>
+        <text>{{item.name}}</text>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="adv-box">
+    <view class='adv-box-wrapper'>
+     <view class='adv-wrapper-left'>
+      <image src="/images/index/home_stwl.gif" lazy-load="true" class='wrapper-left-img' model="aspectFill"></image>
+     </view>
+     <view class='adv-wrapper-right'>
+      <view class='wp-right-row'>
+       <view class='rt-row-img-v'>
+        <image mode='aspectFill' class='rt-row-img' src="/images/index/adv-1.gif"></image>
+       </view>
+       <view class='rt-row-img-v'>
+        <image mode='aspectFill' class='rt-row-img'  src="/images/index/adv-2.gif"></image>
+       </view>
+      </view>
+      <view class='wp-right-row'>
+       <view class='rt-row-img-v'>
+        <image mode='aspectFill' class='rt-row-img' src="/images/index/adv-3.jpg"></image>
+       </view>
+       <view class='rt-row-img-v'>
+        <image mode='aspectFill' class='rt-row-img'  src="/images/index/adv-4.jpg"></image>
+       </view>
+      </view>
+    </view>
+    </view>
+  </view>
+
+  <view class='nav-list'>
+    <view class="nav-li bg-cyan">
+      <view class="nav-title">14026</view>
+      <view class="nav-name">仓储物流商数量（家）</view>
+      <text class='cuIcon-peoplefill'></text>
+    </view>
+    
+    <view class="nav-li bg-orange">
+      <view class="nav-title">14026</view>
+      <view class="nav-name">仓库总面积（㎡）</view>
+      <text class='cuIcon-goodsnewfill'></text>
+    </view>
+
+    <view class="nav-li bg-pink">
+      <view class="nav-title">54</view>
+      <view class="nav-name">覆盖城市（个）</view>
+      <text class='cuIcon-full'></text>
+    </view>
+
+  <view class="nav-li bg-olive">
+      <view class="nav-title">23987</view>
+      <view class="nav-name">近期需求（条）</view>
+      <text class='cuIcon-newsfill'></text>
+    </view>
+  </view>
+
+  <view style="margin-top:20rpx">
+    <scroll-view scroll-x class="bg-white nav text-center solid-bottom">
+      <view style='width:50%' class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+        优选仓库
+      </view>
+      <view style='width:50%' class="cu-item {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+        最新需求
+      </view>
+    </scroll-view>
+    <view class="cu-card article" style="display:{{0==TabCur?true:'none'}};">
+      <view class="cu-item shadow solid-bottom" bindtap="toStoreDetail" style='padding-top:30rpx;margin:0;' wx:for="{{5}}">
+          <!--<view class="title" style="line-height:60rpx;">
+            <view class="text-cut">
+              <text class='text-red'>面积：20000㎡</text>
+              <text style="color:#313131;float:right;">日期：09-30</text>
+            </view>
+          </view>-->
+          <view class="content">
+            <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+            <view class="desc">
+              <view style='font-weight:bolder;font-size:32rpx;'>广东珠海金湾区恒温仓库</view>
+              <view class="text-content" style="text-overflow:ellipsis;-webkit-box-orient:vertical;overflow:hidden;white-space:nowrap;width:430rpx;height:1.6em;"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+              <view>
+                <view style="color:#888;font-size:28rpx;height:1.2em;">期限面议，面积面议</view>
+                <view class="cu-tag bg-green light sm round">仓储</view>
+
+                <view style="margin-top:10rpx;">
+                  <text class='text-red'>面积：20000㎡</text>
+                  <text style="color:#313131;float:right;">日期：09-30</text>
+                </view>
+              </view>
+            </view>
+          </view>
+      </view>   
+  </view>
+
+      <view class='cu-card article' style="background-color:#fff;display:{{1==TabCur?true:'none'}};">
+        <view class='nedd-list' style='padding:20rpx;'>
+          <view class='need-item' wx:for="{{4}}" style="height:300rpx;border-bottom:1px solid #9a9a9a;padding-top:20rpx;">
+            <view class='need-title' style='height:40rpx;'>
+              <view class="cu-tag bg-red light sm round" style="font-size:28rpx; margin-bottom:10rpx;margin-right:10rpx;">四星</view>
+              <view class="tl-txt">
+                寻找800平米托管普通仓库
+              </view>
+              <view class="cu-tag bg-green light sm round" style="font-size:28rpx; line-height:40rpx;margin-bottom:10rpx;margin-left:10rpx;">免</view>
+          </view>
+          <view class="content" style='color:#888;'>
+                <view class="ct-left">
+                  <text class="cuIcon-moneybag lg text-gray"></text>
+                  <text>面议</text>
+                </view>
+                <view class="ct-right" style="">
+                  <text>报价点积分：</text>
+                  <text class="jf-txg">0点</text>
+                </view>
+
+                <view class="ct-left">
+                  <text class="cuIcon-time lg text-gray"></text>
+                  <text>1年合同|3个月内启用</text>
+                </view>
+                <view class="ct-right">
+                  <text>2019-05-18</text>
+                </view>
+
+                <view class="ct-left">
+                  <text class="cuIcon-baby lg text-gray"></text>
+                  <text>玩具</text>
+                </view>
+                <view class="ct-right">
+                  <button class="cu-btn button-hover bg-orange">查看详情</button>
+                </view>
+              </view>
+            </view>
+        </view>
+      </view>
+  </view>
+
+</scroll-view>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="basics">
+    <view class='cuIcon-home text-cyan'>
+    </view>
+    <view class="text-cyan">主页</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="about">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='about'?'text-green':'text-gray'}}">关于</view>
+  </view>
+</view>
+
+  

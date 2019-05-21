@@ -1,0 +1,57 @@
+.adv-box{
+  margin-top:20rpx;
+}
+.adv-box-wrapper{
+  display:flex;
+  flex-direction:row;
+}
+.adv-wrapper-left{
+  width:32%;
+}
+.wrapper-left-img{
+  width:100%;
+  height:260rpx;
+}
+.adv-wrapper-right{
+  width:68%;
+  display:flex;
+  flex-direction:column;
+  height:260rpx;
+}
+.wp-right-row{
+  display:flex;
+  flex-direction:row;
+  height:130rpx;
+}
+.rt-row-img-v{
+  width:50%;
+  padding-left:20rpx;
+}
+.rt-row-img{
+  width:100%;
+  height:120rpx
+}
+.tl-txt{
+  display:inline-block;
+  font-size: 28rpx;
+  font-weight: bolder;
+  font-family: 微软雅黑;
+  line-height: 40rpx;
+}
+.ct-left{
+  text-align:left;
+  width:50%;
+  display:inline-block;
+  margin-bottom: 20rpx;
+}
+.ct-right{
+  text-align:right;
+  width:50%;
+  display:inline-block;
+  margin-bottom: 20rpx;
+}
+.jf-txt{
+  color:orange;
+  font-size:36rpx;
+  font-weight:border;
+}

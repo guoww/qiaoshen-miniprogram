@@ -1,0 +1,262 @@
+<scroll-view>
+  <view class='cu-custom'>
+
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <navigator open-type='navigateBack'>
+      <view class="action" style='position:absolute;top:{{StatusBar}}px;' bindtap="back">
+        <text class="cuIcon-back text-white"></text> 返回
+      </view>
+    </navigator>
+  </view>
+</view>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{4}}" wx:key>
+    <image src="https://image.weilanwl.com/img/4x3-{{index+1}}.jpg" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+<view class='goodsname'>
+  <view class="gn-txt text-grey">北京大兴区3500平米普通仓库出租/托管</view>
+  <view class='hot-v'>
+    <view class='cuIcon-hot lg text-red'></view>
+    <text>607</text>
+  </view>
+  
+</view>
+
+  <view class="cu-list menu">
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-circlefill text-grey"></text>
+        <text class="text-grey">仓库编号</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">SW017660</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">供应类型</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">接受出租/托管</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-btn text-olive"></text>
+        <text class="text-grey">仓库类型</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">普通</text>
+      </view>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey">仓库库型</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">平台</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-emojiflashfill text-pink"></text>
+        <text class="text-grey">地坪处理</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">高标水泥、环氧</text>
+      </view>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-btn text-green"></text>
+        <text class="text-grey">仓库面积</text>
+      </view>
+      <view class="action">
+        <text class="text-red text-lg">35000平米</text>
+      </view>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">可租面积</text>
+      </view>
+      <view class="action">
+        <text class="text-red text-lg">35000平米</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">合同面积</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">不低于1000平米</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">合同期限</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">不低于6个月</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">更新时间</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">2019-05-19</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-warn text-green"></text>
+        <text class="text-grey">发表时间</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">2019-05-19</text>
+      </view>
+    </view>
+    <view>
+      <view class="cu-bar bg-white solid-bottom margin-top">
+        <view class="action">
+          <text class="cuIcon-edit text-orange "></text>仓库软实力
+        </view>
+      </view>
+      <view class='info-list'>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>专业类别</text>
+          </view>
+          <view class="info-content"> 
+            <text>三/四方物流、电务仓、发展商、物流配送中心、区域配送中心</text>
+          </view>
+        </view>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>服务范围</text>
+          </view>
+          <view class="info-content"> 
+            <text>仓储、运输、代发、装卸、检验、拣货、标签、包装、收款、回收/退货、配送</text>
+          </view>
+        </view>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>库存经验</text>
+          </view>
+          <view class="info-content"> 
+            <text>快消产品、服饰/帽鞋、家具日用、护肤/化妆、食品</text>
+          </view>
+        </view>
+      </view>
+    </view>  
+    <view>
+      <view class="cu-bar bg-white solid-bottom margin-top">
+        <view class="action">
+          <text class="cuIcon-edit text-orange "></text>仓库硬实力
+        </view>
+      </view>
+      <view class='info-list'>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>装卸平台</text>
+          </view>
+          <view class="info-content"> 
+            <text>装卸平台</text>
+          </view>
+        </view>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>电脑系统</text>
+          </view>
+          <view class="info-content"> 
+            <text>仓库系统</text>
+          </view>
+        </view>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>安保系统</text>
+          </view>
+          <view class="info-content"> 
+            <text>中央监控</text>
+          </view>
+        </view>
+        <view class='info-item solid-bottom'>
+          <view class='info-tle'>
+            <text>消防设备</text>
+          </view>
+          <view class="info-content"> 
+            <text>消防栓、灭火器</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-edit text-orange "></text>仓库简介
+      </view>
+    </view>
+    <view class="content" style="margin-top:1px;padding:20rpx;background-color:#fff;color:#888;"><text>
+      仓库楼层：总共1层，第一层，单层楼高9米/层，单楼层承重3吨/平米；\n
+      仓库闸口：总共1个，闸口宽度8米，闸口高度5米\n
+      仓库停车场：可提供停车数量4辆，停车场长度12米，停车场宽度12米\n
+      我门目前在全国有6大RDC，70个前置仓库，总面积80万平米。服务1000+客户，500+知名品牌，北京仓库可用面积：3500，可拓展3000，环氧地坪，有监控，快递资源丰富\n
+      起租面积不低于1000平米，起租期限不低于6个月\n
+      建筑类型：平米仓
+      </text>
+    </view>
+    <view class='cantact-info'>
+      <view class="cu-bar bg-white solid-bottom margin-top">
+        <view class="action">
+          <text class="cuIcon-phone text-orange "></text>联系方式
+        </view>
+      </view>
+      <view class="cu-list menu">
+        <view class="cu-item">
+          <view class="content">
+            <text class="cuIcon-btn text-olive"></text>
+            <text class="text-grey">会员编号</text>
+          </view>
+          <view class="action">
+            <text class="text-grey text-sm">MC012070</text>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="content">
+            <text class="cuIcon-btn text-olive"></text>
+            <text class="text-grey">联系人</text>
+          </view>
+          <view class="action">
+            <text class="text-grey text-sm">王先生</text>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="content">
+            <text class="cuIcon-btn text-olive"></text>
+            <text class="text-grey">手机</text>
+          </view>
+          <view class="action">
+            <text class="text-grey text-sm">13498758612</text>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="content">
+            <text class="cuIcon-btn text-olive"></text>
+            <text class="text-grey">仓库地址</text>
+          </view>
+          <view class="action">
+            <text class="text-grey text-sm">广东省广州市白云区xxxxxxxxxxxxxxxxxxxxxxx</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+
+  </view>
+</scroll-view>
